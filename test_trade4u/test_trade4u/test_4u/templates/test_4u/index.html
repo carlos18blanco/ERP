@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "test_4u/base.html" %}
+</head>
+<body>
+
+<div class="container">
+    <div class="row navbar navbar-dark bg-warning shadow-sm">
+         <div class="col">
+            <a href="#">
+                <img src="{{ MEDIA_URL }}logo.png" width="200px" height="50px">
+            </a>
+         </div>
+        <div class="col d-flex justify-content-end">
+            <div class="btn-group">
+                <button class="btn mr-2 btn-outline-dark" type="button" data-toggle="modal" data-target="#empresaModal">Empresa</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn mr-2 btn-outline-dark" type="button" data-toggle="modal" data-target="#contactoModal">Contacto</button>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="row align-items-center text-center">
+        <div class="col-5 mx-auto">
+            <div class="jumbotron bg-dark text-white" >
+                <form method="POST">
+                  {% csrf_token %}
+                    <h3>Inicio de sesion</h3>
+                     <br/>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Ingrese su usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                    </div>
+                    <button type="submit" class="btn badge-danger">Iniciar sesion</button>
+                </form>
+                <hr/>
+                <p>TRADE 4U nace de la necesidad de brindarle a personas sin experiencia en trading una opción de
+                    inversión real, donde cada uno de ellos pueda tener: seguridad, confianza, buena rentabilidad y
+                    capacidad de decisión respetando su perfil inversionista.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col text-center bg-dark text-white fixed-bottom">
+    2018 © TRADE 4U - Todos los derechos reservados.
+</div>
+</body>
+</html>
+
+
+<!-- MODAL DEL BOTON EMPRESA -->
+<div class="modal fade" id="empresaModal" tabindex="-1" role="dialog" aria-labelledby="empresaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="empresaModalLabel">TRADE 4U</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h6>Historia</h6>
+            <p>TRADE 4U nace de la necesidad de brindarle a personas sin experiencia en trading una opción de inversión
+                real, donde cada uno de ellos pueda tener: seguridad, confianza, buena rentabilidad y capacidad de
+                decisión respetando su perfil inversionista. Por ello TRADE 4U se especializa en ofrecer un amplio
+                portafolio de inversión, gran conocimiento del mercado bursátil; sumándole además, la última tecnología
+                en procesos de inversión, como lo son los Expert Advisors (E.A.), Inteligencia Artificial (A.I.) y
+                trading manual. Esto nos diferencia de la competencia y nos permite crecer junto con nuestros clientes.</p>
+            <hr/>
+            <h6>Qué es Trading</h6>
+            <p>El trading es el arte de negociar y/o especular en los mercados financieros con el objetivo de generar
+                rentabilidades en el tiempo. A diferencia de una “inversión”, el trading es más de corto plazo; semanas,
+                días, horas e incluso minutos. Se puede realizar trading en:
+                -Divisas
+                -Commodities
+                -Acciones
+                -Futuros
+                -Cryptos
+                -Etc .
+                </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL DEL BOTON CONTACTO -->
+<div class="modal fade" id="contactoModal" tabindex="-1" role="dialog" aria-labelledby="contactoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="contactoModalLabel">Contactenos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h6>Escríbenos</h6>
+             <div class="row">
+                <div class="col-2 text-center"><i class="material-icons" style="font-size:48px;">email</i></div>
+                <div class="col">
+                    <p>info@trade4u.co</p>
+                </div>
+            </div>
+            <hr/>
+            <h6>Llámanos</h6>
+             <div class="row">
+                <div class="col-2 text-center"><i class="material-icons" style="font-size:48px;">call</i></div>
+                <div class="col">
+                    <p>(4) 4795087</p>
+                </div>
+            </div>
+            <hr/>
+            <h6>Dirección</h6>
+            <div class="row">
+                <div class="col-2 text-center"><i class="material-icons" style="font-size:48px;">room</i></div>
+                <div class="col">
+                    <p>Calle 10A # 34-11|Diez Hotel Categoría Colombia, Oficina 4012</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+  </div>
+</div>
